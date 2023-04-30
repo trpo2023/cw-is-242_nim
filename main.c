@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <stdio.h>
 
 int main() {
@@ -25,8 +24,36 @@ int main() {
         scanf("%c %d", & heap, & num);
         getchar(); // Считывание символа новой строки
 
-        player = (player == 1) ? 2 : 1; // Смена хода
-    }
-
-    return 0;
-}
+	// Обновление выбранной кучки
+        switch (heap) {
+        case 'A':
+        case 'a':
+            if (num <= a) {
+                a -= num;
+            } else {
+                printf("Ошибка: в кучке A не хватает спичек.\n");
+                continue;
+            }
+	   break;
+        case 'B':
+        case 'b':
+            if (num <= b) {
+                b -= num;
+            } else {
+                printf("Ошибка: в кучке B не хватает спичек.\n");
+                continue;
+            }
+            break;
+	case 'C':
+        case 'c':
+            if (num <= c) {
+                c -= num;
+            } else {
+                printf("Ошибка: в кучке C не хватает спичек.\n");
+                continue;
+            }
+            break;
+	default:
+            printf("Ошибка: некорректная команда.\n");
+            continue;
+        }
