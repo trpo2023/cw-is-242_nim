@@ -27,3 +27,7 @@
                 continue;
             }
             break;
+	default:
+            printf("Ошибка: некорректная команда.\n");
+            continue;
+        }
