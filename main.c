@@ -57,3 +57,10 @@ int main() {
             printf("Ошибка: некорректная команда.\n");
             continue;
         }
+	   
+	// Смена хода
+        player = (player == 1) ? 2 : 1;
+    }
+
+    return 0;
+}    
