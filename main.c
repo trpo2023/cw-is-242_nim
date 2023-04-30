@@ -18,3 +18,12 @@
                 continue;
             }
             break;
+	case 'C':
+        case 'c':
+            if (num <= c) {
+                c -= num;
+            } else {
+                printf("Ошибка: в кучке C не хватает спичек.\n");
+                continue;
+            }
+            break;
