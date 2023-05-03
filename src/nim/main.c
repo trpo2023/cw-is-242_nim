@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 #include "functions.h"
 
 int main() {
@@ -19,8 +20,12 @@ break;
 }
 
 // Ввод и проверка корректности ввода
-char heap;
-int num;
-printf("Игрок %d, выберите кучку и количество спичек для удаления (например, A 2): ", player);
-        scanf("%c %d", & heap, & num);
-        getchar(); // Считывание символа новой строки
+	char heap;
+	int num;
+	printf("Игрок %d, выберите кучку и количество спичек для удаления (например, A 2): ", player);
+	if (scanf(" %c %d", &heap, &num) != 2) {
+		printf("Ошибка: некорректная команда.\n");
+		scanf("%*s"); //считывание и отбрасывание лишнего
+		continue;
+	}
+getchar(); // Считывание символа новой строки
