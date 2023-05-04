@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <ctype.h>
 #include "libnim/functions.h"
+#include <ctype.h>
+#include <stdio.h>
 
 int display_heaps(int a, int b, int c)
 {
@@ -9,7 +9,7 @@ int display_heaps(int a, int b, int c)
         printf("|");
     }
     printf("\nB: ");
-    for (int i = 0; i < b; i++ ) {
+    for (int i = 0; i < b; i++) {
         printf("|");
     }
     printf("\nC: ");
@@ -35,21 +35,18 @@ int update_heap(int* a, int* b, int* c, char heap, int num)
             return 0;
         }
         *a -= num;
-        }
-        else if (heap == 'B') {
-            if (num <= 0 || num > *b) {
-                return 0;
-            }
-        *b -= num;
-        }
-        else if (heap == 'C') {
-            if (num <= 0 || num > *c) {
-                return 0;
-            }
-        *c -= num;
-        }
-        else {
+    } else if (heap == 'B') {
+        if (num <= 0 || num > *b) {
             return 0;
         }
-        return 1;
+        *b -= num;
+    } else if (heap == 'C') {
+        if (num <= 0 || num > *c) {
+            return 0;
+        }
+        *c -= num;
+    } else {
+        return 0;
+    }
+    return 1;
 }
