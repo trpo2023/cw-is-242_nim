@@ -5,15 +5,15 @@
 int display_heaps(int a, int b, int c)
 {
     printf("A: ");
-    for (int i = 0; i < a; i++){
+    for (int i = 0; i < a; i++) {
         printf("|");
     }
     printf("\nB: ");
-    for (int i = 0; i < b; i++){
+    for (int i = 0; i < b; i++ ){
         printf("|");
     }
     printf("\nC: ");
-    for (int i = 0; i < c; i++){
+    for (int i = 0; i < c; i++) {
         printf("|");
     }
     printf("\n");
