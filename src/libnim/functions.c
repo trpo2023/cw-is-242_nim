@@ -2,7 +2,7 @@
 #include <ctype.h>
 #include "libnim/functions.h"
 
-void display_heaps(int a, int b, int c) {
+int display_heaps(int a, int b, int c) {
         printf("A: ");
         for (int i = 0; i < a; i++) {
                 printf("|");
@@ -16,6 +16,7 @@ void display_heaps(int a, int b, int c) {
                 printf("|");
         }
         printf("\n");
+	return 0;
 }
 
 int is_game_over(int a, int b, int c) {

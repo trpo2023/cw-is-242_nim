@@ -4,7 +4,7 @@ APP_NAME = nim
 LIB_NAME = libnim
 TEST_NAME = nim_test
 
-CFLAGS = -Wall -Wextra -Wpedantic -std=c99
+CFLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -I src -MP -MMD
 CPPFLAGST = -I thirdparty -MP -MMD
 LDFLAGS =
@@ -57,6 +57,7 @@ run_test:
 clean:
 	$(RM) $(APP_PATH) $(OBJ_DIR)/*/*/*.[aod]
 	$(RM) bin/*.exe
+	$(RM) $(BIN_DIR)/$(TEST_NAME)
 	$(RM) $(OBJ_DIR)/$(TEST_DIR)/*.[aod]
 
 test: $(TEST_PATH)

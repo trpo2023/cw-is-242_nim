@@ -2,7 +2,7 @@
 #define FUNCTIONS_H
 
 // Отображение текущего состояния кучек спичек
-void display_heaps(int a, int b, int c);
+int display_heaps(int a, int b, int c);
 
 // Проверка условия окончания игры
 int is_game_over(int a, int b, int c);
