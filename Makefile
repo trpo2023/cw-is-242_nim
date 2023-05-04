@@ -1,22 +1,22 @@
 CC = gcc
 
-        APP_NAME
-        = nim LIB_NAME = libnim TEST_NAME = nim_test
+	APP_NAME
+	= nim LIB_NAME = libnim TEST_NAME = nim_test
 
-                CFLAGS
-        = -Wall - Wextra - Werror CPPFLAGS = -I src - MP - MMD CPPFLAGST
-        = -I thirdparty - MP - MMD LDFLAGS = LDLIBS =
+		CFLAGS
+	= -Wall - Wextra - Werror CPPFLAGS = -I src - MP - MMD CPPFLAGST
+	= -I thirdparty - MP - MMD LDFLAGS = LDLIBS =
 
-                BIN_DIR = bin OBJ_DIR = obj SRC_DIR = src TEST_DIR = test
+	BIN_DIR = bin OBJ_DIR = obj SRC_DIR = src TEST_DIR = test
 
-                        APP_PATH
-        = $(BIN_DIR) / $(APP_NAME) TEST_PATH
-        = $(BIN_DIR) / $(TEST_NAME) LIB_PATH
-        = $(OBJ_DIR) / $(SRC_DIR) / $(LIB_NAME)
-        / $(LIB_NAME).a
+		APP_PATH
+	= $(BIN_DIR) / $(APP_NAME) TEST_PATH
+	= $(BIN_DIR) / $(TEST_NAME) LIB_PATH
+	= $(OBJ_DIR) / $(SRC_DIR) / $(LIB_NAME)
+	/ $(LIB_NAME).a
 
-                  SRC_EXT
-        = c
+		SRC_EXT
+	= c
 
                 APP_SOURCES
         = $(shell find $(SRC_DIR) / $(APP_NAME) - name '*.$(SRC_EXT)')
