@@ -2,7 +2,11 @@
 #include <ctype.h>
 #include "libnim/functions.h"
 
+<<<<<<< HEAD
 int main()
+=======
+int main() 
+>>>>>>> f21e851118bfd05da501d0c8b9fc918d11c4b7b0
 {
         int a, b, c;
         int player = 1; // Игрок 1 начинает игру
