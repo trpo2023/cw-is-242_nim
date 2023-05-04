@@ -19,7 +19,7 @@ CTEST(update_heap_test, test1)
     ASSERT_EQUAL(a, 1);
     ASSERT_EQUAL(update_heap(&a, &b, &c, 'B', 1), 1);
     ASSERT_EQUAL(b, 1);
-    ASSERT_EQUAL(update_heap(&a, &b, &c, 'C', 1), 0);
+    ASSERT_EQUAL(update_heap(&a, &b, &c, 'C', 0), 0);
     ASSERT_EQUAL(c, 1);
     ASSERT_EQUAL(update_heap(&a, &b, &c, 'D', 1), 0);
     ASSERT_EQUAL(a, 1);
