@@ -2,8 +2,6 @@
 #include <ctype.h>
 #include "libnim/functions.h"
 
-int main()
-=======
 int main() 
 {
         int a, b, c;
