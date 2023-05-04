@@ -1,8 +1,13 @@
-#ifndef FUNCTIONS_H_INCLUDED
-#define FUNCTIONS_H_INCLUDED
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
 
-void display_matches(int a, int b, int c);
-void update_heap(char heap, int num, int *a, int *b, int *c, int player);
-int check_end_game(int a, int b, int c);
+// Отображение текущего состояния кучек спичек
+void display_heaps(int a, int b, int c);
 
-#endif // FUNCTIONS_H_INCLUDED
+// Проверка условия окончания игры
+int is_game_over(int a, int b, int c);
+
+// Обновление выбранной кучки
+int update_heap(int * a, int * b, int * c, char heap, int num);
+
+#endif
