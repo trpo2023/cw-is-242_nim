@@ -48,7 +48,7 @@ int update_heap(int *a, int *b, int *c, char heap, int num)
             {
                 return 0;
             }
-            *b -= num;
+        *b -= num;
         }
         else if (heap == 'C')
         {
@@ -56,7 +56,7 @@ int update_heap(int *a, int *b, int *c, char heap, int num)
             {
                 return 0;
             }
-            *c -= num;
+        *c -= num;
         }
         else
         {
