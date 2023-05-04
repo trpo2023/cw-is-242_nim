@@ -49,20 +49,20 @@ $(OBJ_DIR)/%.o: %.c
 .PHONY: run clean test run_test
 
 run:
-        ./bin/nim
+	./bin/nim
 
 run_test:
-        ./bin/nim_test
+	./bin/nim_test
 
 clean:
-        $(RM) $(APP_PATH) $(OBJ_DIR)/*/*/*.[aod]
-        $(RM) bin/*.exe
-        $(RM) $(BIN_DIR)/$(TEST_NAME)
-        $(RM) $(OBJ_DIR)/$(TEST_DIR)/*.[aod]
+	$(RM) $(APP_PATH) $(OBJ_DIR)/*/*/*.[aod]
+	$(RM) bin/*.exe
+	$(RM) $(BIN_DIR)/$(TEST_NAME)
+	$(RM) $(OBJ_DIR)/$(TEST_DIR)/*.[aod]
 
 test: $(TEST_PATH)
 
 -include $(DEPS)
 
 $(TEST_PATH): $(TEST_OBJECTS) $(LIB_PATH)
-        $(CC) $(CFLAGS) $(CPPFLAGST) $^ -o $@ -lm $(LDFLAGS) $(LDLIBS)
+	$(CC) $(CFLAGS) $(CPPFLAGST) $^ -o $@ -lm $(LDFLAGS) $(LDLIBS)
