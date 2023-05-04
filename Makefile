@@ -38,13 +38,13 @@ all: $(APP_PATH)
 -include $(DEPS)
 
 $(APP_PATH): $(APP_OBJECTS) $(LIB_PATH)
-        $(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@ -lm $(LDFLAGS) $(LDLIBS)
+$(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@ -lm $(LDFLAGS) $(LDLIBS)
 
 $(LIB_PATH): $(LIB_OBJECTS)
-        ar rcs $@ $^
+ar rcs $@ $^
 
 $(OBJ_DIR)/%.o: %.c
-        $(CC) -c $(CFLAGS) $(CPPFLAGS) $(CPPFLAGST) $< -o $@
+$(CC) -c $(CFLAGS) $(CPPFLAGS) $(CPPFLAGST) $< -o $@
 
 .PHONY: run clean test run_test
 
