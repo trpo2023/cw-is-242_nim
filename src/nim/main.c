@@ -2,7 +2,8 @@
 #include <ctype.h>
 #include "libnim/functions.h"
 
-int main() {
+int main() 
+{
         int a, b, c;
         int player = 1; // Игрок 1 начинает игру
         a = 3;
