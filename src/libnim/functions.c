@@ -5,7 +5,7 @@
 int display_heaps(int a, int b, int c)
 {
     printf("A: ");
-    for (int i = 0; i < a; i++)
+   for (int i = 0; i < a; i++)
     {
         printf("|");
     }
