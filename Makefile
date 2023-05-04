@@ -18,56 +18,54 @@ CC = gcc
 		SRC_EXT
 	= c
 
-                APP_SOURCES
-        = $(shell find $(SRC_DIR) / $(APP_NAME) - name '*.$(SRC_EXT)')
-                APP_OBJECTS
-        = $(APP_SOURCES
-            : $(SRC_DIR) / %.$(SRC_EXT) = $(OBJ_DIR) / $(SRC_DIR) / %.o)
+		APP_SOURCES
+	= $(shell find $(SRC_DIR) / $(APP_NAME) - name '*.$(SRC_EXT)')
+		APP_OBJECTS
+	= $(APP_SOURCES
+		: $(SRC_DIR) / %.$(SRC_EXT) = $(OBJ_DIR) / $(SRC_DIR) / %.o)
 
-                TEST_SOURCES
-        = $(shell find $(TEST_DIR) - name '*.$(SRC_EXT)') TEST_OBJECTS
-        = $(TEST_SOURCES
-            : $(TEST_DIR) / %.$(SRC_EXT) = $(OBJ_DIR) / $(TEST_DIR) / %.o)
+		TEST_SOURCES
+	= $(shell find $(TEST_DIR) - name '*.$(SRC_EXT)') TEST_OBJECTS
+	= $(TEST_SOURCES
+		: $(TEST_DIR) / %.$(SRC_EXT) = $(OBJ_DIR) / $(TEST_DIR) / %.o)
 
-                LIB_SOURCES
-        = $(shell find $(SRC_DIR) / $(LIB_NAME) - name '*.$(SRC_EXT)')
-                LIB_OBJECTS
-        = $(LIB_SOURCES
-            : $(SRC_DIR) / %.$(SRC_EXT) = $(OBJ_DIR) / $(SRC_DIR) / %.o)
+		LIB_SOURCES
+	= $(shell find $(SRC_DIR) / $(LIB_NAME) - name '*.$(SRC_EXT)')
+		LIB_OBJECTS
+	= $(LIB_SOURCES
+		: $(SRC_DIR) / %.$(SRC_EXT) = $(OBJ_DIR) / $(SRC_DIR) / %.o)
 
-                DEPS
-        = $(APP_OBJECTS
-            :.o =.d) $(LIB_OBJECTS
-                       :.o =.d) $(TEST_OBJECTS
-                                  :.o =.d)
+		DEPS
+		= $(APP_OBJECTS
+		:.o =.d) $(LIB_OBJECTS
+		:.o =.d) $(TEST_OBJECTS
+		:.o =.d)
+		
+			.PHONY : all all : $(APP_PATH)
 
-                        .PHONY : all all : $(APP_PATH)
+		- include $(DEPS)
 
-                - include $(DEPS)
+		$(APP_PATH)
+	: $(APP_OBJECTS) $(LIB_PATH) $(CC) $(CFLAGS) $(CPPFLAGS) $
+	^ -o $ @-lm $(LDFLAGS) $(LDLIBS)
 
-                        $(APP_PATH)
-    : $(APP_OBJECTS) $(LIB_PATH) $(CC) $(CFLAGS) $(CPPFLAGS) $
-        ^ -o $ @-lm $(LDFLAGS) $(LDLIBS)
+		$(LIB_PATH)
+	: $(LIB_OBJECTS) ar rcs $
+	@$ ^
 
-                  $(LIB_PATH)
-    : $(LIB_OBJECTS) ar rcs $
-      @$ ^
+	$(OBJ_DIR) / %.o : %.c $(CC) - c $(CFLAGS) $(CPPFLAGS) $(CPPFLAGST) $
+		< -o $ @
+			.PHONY : run clean test run_test
 
-        $(OBJ_DIR) / %.o : %.c $(CC) - c $(CFLAGS) $(CPPFLAGS) $(CPPFLAGST) $
-                < -o $ @
+				run
+	:./ bin
+			/ nim
+				run_test
+	:./ bin
+			/ nim_test
 
-                                .PHONY : run clean test run_test
-
-                                                 run
-    :./ bin
-                        / nim
-
-                                  run_test
-    :./ bin
-                        / nim_test
-
-                                clean : $(RM) $(APP_PATH) $(OBJ_DIR) /*/*/
-                                        *.[aod] $(RM) bin/*.exe
+				clean : $(RM) $(APP_PATH) $(OBJ_DIR) /*/*/
+					*.[aod] $(RM) bin/*.exe
 	$(RM) $(BIN_DIR)/$(TEST_NAME)
 	$(RM) $(OBJ_DIR)/$(TEST_DIR)/*.[aod]
 
