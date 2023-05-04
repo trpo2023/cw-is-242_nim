@@ -1,5 +1,5 @@
-#include <ctest.h>
 #include "libnim/functions.h"
+#include <ctest.h>
 
 CTEST(display_heaps_test, test1)
 {
