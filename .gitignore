@@ -53,5 +53,5 @@ dkms.conf
 
 # Trash
 *.vscode
-bin/geometry
-bin/geometry_test
+bin/nim
+bin/nim_test
